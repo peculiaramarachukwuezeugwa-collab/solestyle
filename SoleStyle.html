@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoleStyle | Footwear Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">SOLE<span>STYLE</span></a>
+
+    <nav id="navigation">
+      <a href="#home">Home</a>
+      <a href="#shop" data-filter="Women">Women</a>
+      <a href="#shop" data-filter="Men">Men</a>
+      <a href="#shop" data-filter="All">Explore</a>
+    </nav>
+
+    <div class="header-buttons">
+      <button id="accountBtn">Account</button>
+      <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+      <button id="menuBtn" class="menu-btn">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <p class="eyebrow">YOUR STYLE. YOUR STRIDE.</p>
+        <h1>Step into<br><span>something better.</span></h1>
+        <p>Discover sneakers, heels, sandals, loafers and everyday footwear for every occasion.</p>
+        <a href="#shop" class="primary-btn">Explore the collection ↗</a>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+          alt="Red and white stylish sneaker">
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div>✦ <span>Styles for him and her</span></div>
+      <div>♡ <span>Find your perfect fit</span></div>
+      <div>↗ <span>Easy online shopping</span></div>
+    </section>
+
+    <section class="shop section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Find your pair.</h2>
+        </div>
+        <p>Everyday favourites, timeless classics and statement shoes.</p>
+      </div>
+
+      <div class="filters">
+        <div class="filter-buttons">
+          <button class="filter active" data-filter="All">All</button>
+          <button class="filter" data-filter="Women">Women</button>
+          <button class="filter" data-filter="Men">Men</button>
+          <button class="filter" data-filter="Unisex">Unisex</button>
+        </div>
+
+        <div class="search-sort">
+          <input id="searchInput" type="search" placeholder="Search footwear...">
+          <select id="sortSelect" aria-label="Sort footwear">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="productGrid" class="product-grid"></div>
+      <p id="emptyMessage" class="empty hidden">No footwear found. Try another search.</p>
+    </section>
+
+    <section class="newsletter">
+      <h2>Love good shoes?</h2>
+      <p>Sign up for updates about new arrivals and collections.</p>
+      <form id="newsletterForm">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit" class="primary-btn">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">SOLE<span>STYLE</span></a>
+    <p>Find your fit. Own your stride.</p>
+    <small>© <span id="year"></span> SoleStyle</small>
+  </footer>
+
+  <div id="overlay" class="overlay hidden"></div>
+
+  <aside id="cartPanel" class="cart-panel">
+    <div class="panel-heading">
+      <h2>Your shopping bag</h2>
+      <button id="closeCart" class="close-btn" aria-label="Close cart">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div id="emptyCart" class="empty-cart">
+      <p class="empty-icon">♡</p>
+      <h3>Your bag is empty</h3>
+      <p>Explore our collection and find a pair you love.</p>
+      <button id="continueShopping" class="primary-btn">Explore footwear</button>
+    </div>
+
+    <div id="cartFooter" class="cart-footer">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">₦0</strong>
+      </div>
+      <p>Delivery charges are not included.</p>
+      <button id="checkoutBtn" class="primary-btn full-width">
+        Continue to checkout
+      </button>
+      <small>Demo store: no real payment is collected.</small>
+    </div>
+  </aside>
+
+  <section id="accountModal" class="account-modal hidden">
+    <button id="closeAccount" class="close-btn modal-close" aria-label="Close">×</button>
+    <p class="eyebrow">WELCOME TO SOLESTYLE</p>
+    <h2 id="accountTitle">Create your account</h2>
+    <p class="muted">Join us and make shopping for footwear easier.</p>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-mode="register">Register</button>
+      <button class="auth-tab" data-mode="login">Log in</button>
+    </div>
+
+    <form id="authForm">
+      <div id="nameGroup">
+        <label for="fullName">Full name</label>
+        <input id="fullName" type="text" placeholder="Enter your full name" required>
+      </div>
+
+      <label for="email">Email address</label>
+      <input id="email" type="email" placeholder="you@example.com" required>
+
+      <label for="password">Password</label>
+      <input id="password" type="password" minlength="6"
+             placeholder="At least 6 characters" required>
+
+      <button id="authSubmit" class="primary-btn full-width" type="submit">
+        Create account
+      </button>
+      <p id="authMessage" role="status"></p>
+    </form>
+
+    <small class="security-note">
+      Demonstration only. Do not use a real password. This version does not
+      provide secure production authentication.
+    </small>
+  </section>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
